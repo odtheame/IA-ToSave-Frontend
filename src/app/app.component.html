@@ -1,0 +1,7 @@
+<div *ngIf="login==true; else notLogged">
+    <app-menu></app-menu>
+</div>
+
+<ng-template #notLogged>
+    <app-login></app-login>
+</ng-template>
