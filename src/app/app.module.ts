@@ -18,18 +18,18 @@ import { IncidenciasComponent } from './components/incidencias/incidencias.compo
 import { InformesComponent } from './components/informes/informes.component';
 import { DocumentosComponent } from './components/documentos/documentos.component';
 import { ClientesComponent } from './components/clientes/clientes.component';
+import { FormComponent } from './components/form/form.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TablaComponent } from './components/tabla/tabla.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -42,6 +42,8 @@ import { MatMenuModule } from '@angular/material/menu';
     InformesComponent,
     DocumentosComponent,
     ClientesComponent,
+    FormComponent,
+    TablaComponent,
     LoginComponent
   ],
   imports: [
@@ -62,9 +64,7 @@ import { MatMenuModule } from '@angular/material/menu';
     ReactiveFormsModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule,
-    MatGridListModule,
-    MatMenuModule
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
