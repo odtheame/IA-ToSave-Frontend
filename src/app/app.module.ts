@@ -28,7 +28,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { TableComponent } from './table/table.component';
+import { InicioComponent } from './Components/inicio/inicio.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,7 @@ import { TableComponent } from './table/table.component';
     UsuariosComponent,
     MenuComponent,
     LoginComponent,
-    TableComponent
+    InicioComponent
   ],
   imports: [
     HttpClientModule,

@@ -1,42 +1,41 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatTable } from '@angular/material/table';
+import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/Services/api.service';
-import { TableItem } from 'src/app/Components/documentos/documentos-datasource';
-import { DocumentosDataSource } from './documentos-datasource';
 
 @Component({
   selector: 'app-documentos',
   templateUrl: './documentos.component.html',
   styleUrls: ['./documentos.component.css']
 })
-export class DocumentosComponent implements OnInit, AfterViewInit{
+export class DocumentosComponent implements OnInit{
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
  
-  constructor(public api:ApiService){
-    this.dataSource = new DocumentosDataSource();
-   }
-  ngOnInit(): void {
+  constructor(public api: ApiService) { }
+   async ngOnInit() {
     //llamamos el getAll
-    var response = this.api.getAll("Documentoes")
-    console.log(response);
-    
-  }
-
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild(MatTable) table!: MatTable<TableItem>;
-  dataSource: DocumentosDataSource;
-  
-
-  /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'Bucket', 'IDBucket'];
-
-  
-  ngAfterViewInit(): void {
-    this.dataSource.sort = this.sort;
+    var own = await (this.GetClientes())
+    //console.log(own)
+    //quita todos las propiedades de un objeto
+    this.displayedColumns = Object.keys(own[0]);
+    this.dataSource = new MatTableDataSource(own);
     this.dataSource.paginator = this.paginator;
-    this.table.dataSource = this.dataSource;
+    this.dataSource.sort = this.sort;
+
+  }
+  displayedColumns: any;
+  dataSource = new MatTableDataSource<any>;
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+  async GetClientes(): Promise<any>{
+    var get = await this.api.getAll("Documentoes")
+    return get;
   }
 
 }

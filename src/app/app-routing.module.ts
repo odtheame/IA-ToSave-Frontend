@@ -7,18 +7,18 @@ import { IncidenciasComponent } from './Components/incidencias/incidencias.compo
 import { InformesComponent } from './Components/informes/informes.component';
 import { UbicacionesComponent } from './Components/ubicaciones/ubicaciones.component';
 import { ClientesComponent } from './Components/clientes/clientes.component';
-import { TableComponent } from './table/table.component';
+import { InicioComponent } from './Components/inicio/inicio.component';
+
 
 const routes: Routes = [
-  {path:"",component:PersonasComponent},
+  {path:"",component:InicioComponent},
   {path:"Personas", component:PersonasComponent},
   {path:"Usuarios", component:UsuariosComponent},
   {path:"Documentos", component:DocumentosComponent},
   {path:"Incidencias", component:IncidenciasComponent},
   {path:"Informes", component:InformesComponent},
   {path:"Ubicaciones", component:UbicacionesComponent},
-  {path:"Clientes", component:ClientesComponent},
-  {path:"Tabla", component:TableComponent}
+  {path:"Clientes", component:ClientesComponent}
 ];
 
 @NgModule({

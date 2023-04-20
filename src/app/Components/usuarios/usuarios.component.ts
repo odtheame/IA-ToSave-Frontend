@@ -11,6 +11,7 @@ export class UsuariosComponent implements OnInit{
   constructor(public api:ApiService){ }
   ngOnInit(): void {
     //llamamos el getAll
+    //aqui es donde llamamos la BD SQL Server a la consola F12 del navegador
     var response = this.api.getAll("Usuarios")
     console.log(response);
     

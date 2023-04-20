@@ -1,36 +1,24 @@
-<div class="mat-elevation-z8">
-    <table mat-table class="full-width-table" matSort aria-label="Elements">
-        <!-- Id Column -->
-        <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
-            <td mat-cell *matCellDef="let row">{{row.id}}</td>
-        </ng-container>
+<mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+</mat-form-field>
 
-        <!-- Name Column -->
-        <ng-container matColumnDef="Nombre">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
-            <td mat-cell *matCellDef="let row">{{row.Nombre}}</td>
-        </ng-container>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-        <ng-container matColumnDef="Direccion">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Dirección</th>
-            <td mat-cell *matCellDef="let row">{{row.Direccion}}</td>
-        </ng-container>
+    <ng-container *ngFor="let col of displayedColumns" [matColumnDef]="col">
+        <th mat-header-cell *matHeaderCellDef> {{ col | titlecase }} </th>
+        <td mat-cell *matCellDef="let element"> {{ element[col] }} </td>
+    </ng-container>
 
-        <ng-container matColumnDef="NIT">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>NIT</th>
-            <td mat-cell *matCellDef="let row">{{row.NIT}}</td>
-        </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
-        <ng-container matColumnDef="Encargado">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Encargado</th>
-            <td mat-cell *matCellDef="let row">{{row.Encargado}}</td>
-        </ng-container>
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+    </tr>
 
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
 
-    <mat-paginator #paginator [length]="dataSource?.data?.length" [pageIndex]="0" [pageSize]="10" [pageSizeOptions]="[5, 10, 20]" aria-label="Select page">
-    </mat-paginator>
-</div>
+</table>
+<mat-paginator #paginator [length]="dataSource?.data?.length" [pageIndex]="0" [pageSize]="10" [pageSizeOptions]="[5, 10, 20]" aria-label="Select page">
+</mat-paginator>

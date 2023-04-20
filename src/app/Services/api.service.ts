@@ -13,9 +13,16 @@ export class ApiService {
     var response:any
     await this.http.get(this.url+Controller).toPromise().then((res=>{
       response=res
-    }
-    )
-    )
+    }))
     return response;
   }
+/*
+  async postAll(Controller:string){
+    var response1:any
+    await this.http.post(this.url+Controller).toPromise().then((res=>{
+      response1=res
+    }))
+    return response1
+  }
+  */
 }
