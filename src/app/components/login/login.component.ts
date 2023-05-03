@@ -15,7 +15,7 @@ export class LoginComponent {
   constructor(private fb: FormBuilder) {}
 
   onSubmit(): void {
-    this.usr = this.addressForm.controls["usr"].value;
-    this.pass = this.addressForm.controls["pass"].value;
+   // this.usr = this.addressForm.controls["usr"].value;
+  //  this.pass = this.addressForm.controls["pass"].value;
   }
 }
