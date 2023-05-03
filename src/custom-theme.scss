@@ -16,20 +16,12 @@ $IAToSaveProject-primary: mat.define-palette(mat.$indigo-palette);
 $IAToSaveProject-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$IAToSaveProject-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$IAToSaveProject-theme: mat.define-light-theme((
-  color: (
-    primary: $IAToSaveProject-primary,
-    accent: $IAToSaveProject-accent,
-    warn: $IAToSaveProject-warn,
-  )
-));
+
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($IAToSaveProject-theme);
 

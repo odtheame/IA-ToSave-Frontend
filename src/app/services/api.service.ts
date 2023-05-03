@@ -10,7 +10,7 @@ export class ApiService {
 
   url= "https://localhost:7046/api/"
   async getAll(Controller:string){
-    var response:any
+    var response:any;
     await this.http.get(this.url+Controller).toPromise().then((res=>{
       response=res
     }))

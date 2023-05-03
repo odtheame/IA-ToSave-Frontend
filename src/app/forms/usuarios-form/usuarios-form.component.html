@@ -1,15 +1,22 @@
 <form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
   <mat-card class="shipping-card">
     <mat-card-header>
-      <mat-card-title>Inicia Sesión</mat-card-title>
+      <mat-card-title>Usuarios</mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
+            <input matInput placeholder="ID Usuario" formControlName="idUsr">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
             <input matInput placeholder="Usuario" formControlName="usr">
             <mat-error *ngIf="addressForm.controls['usr'].hasError('required')">
-              Usuario <strong>requerido</strong>
+              Usuario es <strong>requerido</strong>
             </mat-error>
           </mat-form-field>
         </div>
@@ -19,7 +26,17 @@
           <mat-form-field class="full-width">
             <input matInput placeholder="Contraseña" formControlName="pass">
             <mat-error *ngIf="addressForm.controls['pass'].hasError('required')">
-              Contraseña <strong>requerida</strong>
+              Contraseña es <strong>requerida</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="ID Persona" formControlName="idPrsn">
+            <mat-error *ngIf="addressForm.controls['idPrsn'].hasError('required')">
+              ID Persona es <strong>requerido</strong>
             </mat-error>
           </mat-form-field>
         </div>

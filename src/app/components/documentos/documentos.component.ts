@@ -34,7 +34,7 @@ export class DocumentosComponent implements OnInit{
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
   async GetClientes(): Promise<any>{
-    var get = await this.api.getAll("Documentoes")
+    var get = await this.api.getAll("Documentos")
     return get;
   }
 

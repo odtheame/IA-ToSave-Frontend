@@ -29,6 +29,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { TableComponent } from './components/table/table.component';
+import { UbicacionesFormComponent } from './forms/ubicaciones-form/ubicaciones-form.component';
+import { PersonasFormComponent } from './forms/personas-form/personas-form.component';
+import { UsuariosFormComponent } from './forms/usuarios-form/usuarios-form.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,11 @@ import { InicioComponent } from './components/inicio/inicio.component';
     UsuariosComponent,
     MenuComponent,
     LoginComponent,
-    InicioComponent
+    InicioComponent,
+    TableComponent,
+    UbicacionesFormComponent,
+    PersonasFormComponent,
+    UsuariosFormComponent
   ],
   imports: [
     HttpClientModule,

@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/services/api.service';
+import { TableService } from 'src/app/services/table.service';
 
 @Component({
   selector: 'app-clientes',
@@ -14,7 +15,7 @@ export class ClientesComponent implements OnInit{
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(public api: ApiService) { }
+  constructor(public api: ApiService, public tableService: TableService) { }
 
   async ngOnInit() {
     //llamamos el getAll
@@ -36,6 +37,7 @@ export class ClientesComponent implements OnInit{
   }
   async GetClientes(): Promise<any>{
     var get = await this.api.getAll("Clientes")
+    this.tableService = get;
     return get;
   }
 

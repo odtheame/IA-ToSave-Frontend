@@ -8,6 +8,9 @@ import { InformesComponent } from './components/informes/informes.component';
 import { UbicacionesComponent } from './components/ubicaciones/ubicaciones.component';
 import { ClientesComponent } from './components/clientes/clientes.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { UbicacionesFormComponent } from './forms/ubicaciones-form/ubicaciones-form.component';
+import { PersonasFormComponent } from './forms/personas-form/personas-form.component';
+import { UsuariosFormComponent } from './forms/usuarios-form/usuarios-form.component';
 
 
 const routes: Routes = [
@@ -18,7 +21,8 @@ const routes: Routes = [
   {path:"Incidencias", component:IncidenciasComponent},
   {path:"Informes", component:InformesComponent},
   {path:"Ubicaciones", component:UbicacionesComponent},
-  {path:"Clientes", component:ClientesComponent}
+  {path:"Clientes", component:ClientesComponent},
+  {path:"Form", component:UbicacionesFormComponent}
 ];
 
 @NgModule({

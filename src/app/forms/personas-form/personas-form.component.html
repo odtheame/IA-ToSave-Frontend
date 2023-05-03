@@ -1,0 +1,93 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Personas</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="ID Persona" formControlName="idPrsn">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Primer Nombre" formControlName="prNom">
+            <mat-error *ngIf="addressForm.controls['prNom'].hasError('required')">
+              Primer nombre <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Segundo Nombre" formControlName="sdNom">
+            <!--<mat-error *ngIf="addressForm.controls['prNom'].hasError('required')">
+              Primer nombre <strong>requerido</strong>
+            </mat-error>-->
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Primer Apellido" formControlName="prApe">
+            <mat-error *ngIf="addressForm.controls['prApe'].hasError('required')">
+              Primer apellido <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Segundo Apellido" formControlName="sdApe">
+            <mat-error *ngIf="addressForm.controls['sdApe'].hasError('required')">
+              Segundo apellido <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Correo" formControlName="correo">
+            <mat-error *ngIf="addressForm.controls['correo'].hasError('required')">
+              Correo es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Teléfono" formControlName="telef">
+            <mat-error *ngIf="addressForm.controls['telef'].hasError('required')">
+              Teléfono es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Fecha Nacimiento" formControlName="feNaci">
+            <mat-error *ngIf="addressForm.controls['feNaci'].hasError('required')">
+              Fecha de nacimiento es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Fecha Ingreso" formControlName="feIngr">
+            <mat-error *ngIf="addressForm.controls['feIngr'].hasError('required')">
+              Fecha de ingreso es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

@@ -1,8 +1,6 @@
-<div *ngIf="login==true; else notLogged">
+<div *ngIf="login==='login'">
     <app-menu></app-menu>
 </div>
-
-<ng-template #notLogged>
+<div *ngIf="login==='logout'">
     <app-login></app-login>
-</ng-template>
-
+</div>

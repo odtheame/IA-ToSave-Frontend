@@ -1,0 +1,42 @@
+.full-width-table {
+  width: 100%;
+}
+/* Estilo para el botón de filtrar */
+.mat-form-field-suffix {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.mat-form-field-suffix:hover {
+  background-color: #0069d9;
+}
+
+/* Estilo para la tabla */
+table.mat-table {
+  width: 100%;
+}
+
+th.mat-header-cell,
+td.mat-cell {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #eee;
+  font-weight: normal;
+  text-align: left;
+}
+
+td.mat-cell {
+  padding: 16px 0;
+}
+
+tr.mat-header-row {
+  background-color: #f5f5f5;
+}
+
+tr.mat-row:nth-child(even) {
+  background-color: #fafafa;
+}
+
+tr.mat-row:hover {
+  background-color: #f0f0f0;
+}
