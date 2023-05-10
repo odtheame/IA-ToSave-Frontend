@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-personas-form',
@@ -8,15 +9,14 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class PersonasFormComponent {
   addressForm = this.fb.group({
-    idPrsn: null,
     prNom: [null, Validators.required],
     sdNom: null,
     prApe: [null, Validators.required],
     sdApe: [null, Validators.required],
-    correo: [null, Validators.required, Validators.email],
-    telef: [null, Validators.required, Validators.minLength(7), Validators.maxLength(13)],
-    feNaci: [null, Validators.required, Validators.email],
-    feIngr: [null, Validators.required, Validators.email]
+    correo: [null, [Validators.required, Validators.email]],
+    telef: [null, [Validators.required, Validators.min(1000000), Validators.max(9999999999999)]],
+    feNaci: [null, Validators.required],
+    feIngr: [null, Validators.required]
   });
 
   hasUnitNumber = false;
@@ -24,6 +24,9 @@ export class PersonasFormComponent {
   constructor(private fb: FormBuilder) {}
 
   onSubmit(): void {
-    alert('Thanks!');
-  }
+    Swal.fire(
+      'Felicidades',
+      'Formulario enviado con éxito.',
+      'success'
+    )  }
 }

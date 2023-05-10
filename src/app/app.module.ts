@@ -33,6 +33,12 @@ import { TableComponent } from './components/table/table.component';
 import { UbicacionesFormComponent } from './forms/ubicaciones-form/ubicaciones-form.component';
 import { PersonasFormComponent } from './forms/personas-form/personas-form.component';
 import { UsuariosFormComponent } from './forms/usuarios-form/usuarios-form.component';
+import { ClientesFormComponent } from './forms/clientes-form/clientes-form.component';
+import { DocumentosFormComponent } from './forms/documentos-form/documentos-form.component';
+import { IncidenciasFormComponent } from './forms/incidencias-form/incidencias-form.component';
+import { InformesFormComponent } from './forms/informes-form/informes-form.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -50,9 +56,15 @@ import { UsuariosFormComponent } from './forms/usuarios-form/usuarios-form.compo
     TableComponent,
     UbicacionesFormComponent,
     PersonasFormComponent,
-    UsuariosFormComponent
+    UsuariosFormComponent,
+    ClientesFormComponent,
+    DocumentosFormComponent,
+    IncidenciasFormComponent,
+    InformesFormComponent
   ],
   imports: [
+    MatDatepickerModule,
+    MatNativeDateModule,
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,

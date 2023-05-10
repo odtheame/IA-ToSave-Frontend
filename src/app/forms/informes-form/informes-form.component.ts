@@ -3,17 +3,17 @@ import { FormBuilder, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-usuarios-form',
-  templateUrl: './usuarios-form.component.html',
-  styleUrls: ['./usuarios-form.component.css']
+  selector: 'app-informes-form',
+  templateUrl: './informes-form.component.html',
+  styleUrls: ['./informes-form.component.css']
 })
-export class UsuariosFormComponent {
+export class InformesFormComponent {
   addressForm = this.fb.group({
-    usr: [null, Validators.required],
-    pass: [null, [Validators.required, Validators.minLength(8), Validators.maxLength(32)]],
-    idPrsn: [null, Validators.required]
+    nInf: ['', Validators.required],
+    idIcdc: [null, Validators.required],
+    descr: [null, [Validators.required, Validators.maxLength(255)]],
+    idDoc: [null, Validators.required]
   });
-
   constructor(private fb: FormBuilder) {}
 
   onSubmit(): void {

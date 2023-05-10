@@ -1,0 +1,33 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+      <mat-card-header>
+          <mat-card-title>Documentos</mat-card-title>
+      </mat-card-header>
+      <br>
+      <mat-card-content>
+          <div class="row">
+              <div class="col">
+                  <mat-form-field class="full-width">
+                      <input matInput placeholder="Bucket" formControlName="bucket">
+                      <mat-error *ngIf="addressForm.controls['bucket'].hasError('required')">
+                          Bucket <strong>Requerido</strong>
+                      </mat-error>
+                  </mat-form-field>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col">
+                  <mat-form-field class="full-width">
+                      <input matInput placeholder="ID Documento" formControlName="idBucket">
+                      <mat-error *ngIf="addressForm.controls['idBucket'].hasError('required')">
+                        ID Documento <strong>Requerido</strong>
+                      </mat-error>
+                  </mat-form-field>
+              </div>
+          </div>
+      </mat-card-content>
+      <mat-card-actions>
+          <button mat-raised-button color="primary" type="submit">Submit</button>
+      </mat-card-actions>
+  </mat-card>
+</form>

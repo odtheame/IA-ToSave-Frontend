@@ -3,18 +3,12 @@
     <mat-card-header>
       <mat-card-title>Ubicaciones</mat-card-title>
     </mat-card-header>
+    <br>
     <mat-card-content>
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
-            <input matInput placeholder="ID Ubicación" formControlName="idUbi">
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Departamento" formControlName="dpt">
+            <input matInput placeholder="Departamento" formControlName="dpto">
             <mat-error *ngIf="addressForm.controls['dpto'].hasError('required')">
               Departamento es <strong>requerido</strong>
             </mat-error>
@@ -44,15 +38,19 @@
           <mat-form-field class="full-width">
             <input matInput placeholder="Número de Cuadrante" formControlName="ncdt">
             <mat-error *ngIf="addressForm.controls['ncdt'].hasError('required')">
-              N° cuadrante es <strong>requerido</strong>
+              Número de cuadrante es <strong>requerido</strong>
             </mat-error>
           </mat-form-field>
         </div>
         <div class="col">
           <mat-form-field class="full-width">
-            <input matInput placeholder="ID Usuario" formControlName="idUsr">
+            <mat-select matInput placeholder="Usuario" formControlName="idUsr">
+              <mat-option value="1">1</mat-option>
+              <mat-option value="2">2</mat-option>
+              <mat-option value="3">3</mat-option>
+            </mat-select>
             <mat-error *ngIf="addressForm.controls['idUsr'].hasError('required')">
-              ID Usuario es <strong>requerido</strong>
+              Usuario es <strong>requerido</strong>
             </mat-error>
           </mat-form-field>
         </div>

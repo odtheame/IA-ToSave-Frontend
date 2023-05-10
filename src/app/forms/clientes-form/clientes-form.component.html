@@ -1,0 +1,61 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+    <mat-card class="shipping-card">
+        <mat-card-header>
+            <mat-card-title>Clientes</mat-card-title>
+        </mat-card-header>
+        <br>
+        <mat-card-content>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Nombre" formControlName="nom">
+                        <mat-error *ngIf="addressForm.controls['nom'].hasError('required')">
+                            Nombre <strong>Requerido</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <mat-select placeholder="Persona Encargada" formControlName="idPersona">
+                            <mat-option value="1">1</mat-option>
+                            <mat-option value="2">2</mat-option>
+                            <mat-option value="3">3</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="addressForm.controls['idPersona'].hasError('required')">
+                            Nombre de la persona <strong>Requerida</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Direccion" formControlName="direccion">
+                        <mat-error *ngIf="addressForm.controls['direccion'].hasError('required')">
+                            Direccion <strong>Requerida</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Identificacion" formControlName="nit">
+                        <mat-error *ngIf="addressForm.controls['nit'].hasError('required')">
+                            Identificacion <strong>Requerida</strong>
+                        </mat-error>
+                        <mat-error *ngIf="addressForm.get('nit').hasError('minlength')">
+                            Identificacion mínima de <strong>8 carácteres</strong>
+                        </mat-error>
+                        <mat-error *ngIf="addressForm.get('nit').hasError('maxlength')">
+                            Identificacion máxima de <strong>12 carácteres</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" type="submit">Submit</button>
+        </mat-card-actions>
+    </mat-card>
+</form>

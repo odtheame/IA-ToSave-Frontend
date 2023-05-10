@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  
   addressForm = new FormGroup({
     usr: new FormControl('', Validators.required),
     pass: new FormControl('', Validators.required)

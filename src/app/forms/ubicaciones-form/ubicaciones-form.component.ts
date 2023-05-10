@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-ubicaciones-form',
@@ -8,9 +9,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class UbicacionesFormComponent {
   addressForm = this.fb.group({
-    idUbi: null,
-    cdad: [null, Validators.required],
     dpto: [null, Validators.required],
+    cdad: [null, Validators.required],
     lcld: [null, Validators.required],
     ncdt: [null, Validators.required],
     idUsr: [null, Validators.required],
@@ -19,6 +19,9 @@ export class UbicacionesFormComponent {
   constructor(private fb: FormBuilder) {}
 
   onSubmit(): void {
-    alert('Thanks!');
-  }
+    Swal.fire(
+      'Felicidades',
+      'Formulario enviado con éxito.',
+      'success'
+    )  }
 }

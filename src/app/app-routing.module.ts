@@ -11,6 +11,10 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { UbicacionesFormComponent } from './forms/ubicaciones-form/ubicaciones-form.component';
 import { PersonasFormComponent } from './forms/personas-form/personas-form.component';
 import { UsuariosFormComponent } from './forms/usuarios-form/usuarios-form.component';
+import { ClientesFormComponent } from './forms/clientes-form/clientes-form.component';
+import { DocumentosFormComponent } from './forms/documentos-form/documentos-form.component';
+import { IncidenciasFormComponent } from './forms/incidencias-form/incidencias-form.component';
+import { InformesFormComponent } from './forms/informes-form/informes-form.component';
 
 
 const routes: Routes = [
@@ -22,7 +26,13 @@ const routes: Routes = [
   {path:"Informes", component:InformesComponent},
   {path:"Ubicaciones", component:UbicacionesComponent},
   {path:"Clientes", component:ClientesComponent},
-  {path:"Form", component:UbicacionesFormComponent}
+  {path:"FormClientes", component:ClientesFormComponent},
+  {path:"FormDocumentos", component:DocumentosFormComponent},
+  {path:"FormIncidencias", component:IncidenciasFormComponent},
+  {path:"FormInformes", component:InformesFormComponent},
+  {path:"FormPersonas", component:PersonasFormComponent},
+  {path:"FormUbicaciones", component:UbicacionesFormComponent},
+  {path:"FormUsuarios", component:UsuariosFormComponent}
 ];
 
 @NgModule({

@@ -3,14 +3,8 @@
     <mat-card-header>
       <mat-card-title>Usuarios</mat-card-title>
     </mat-card-header>
+    <br>
     <mat-card-content>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="ID Usuario" formControlName="idUsr">
-          </mat-form-field>
-        </div>
-      </div>
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
@@ -24,9 +18,15 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
-            <input matInput placeholder="Contraseña" formControlName="pass">
+            <input type="password" matInput placeholder="Contraseña" formControlName="pass">
             <mat-error *ngIf="addressForm.controls['pass'].hasError('required')">
               Contraseña es <strong>requerida</strong>
+            </mat-error>
+            <mat-error *ngIf="addressForm.get('pass').hasError('minlength')">
+              Contraseña mínima de <strong>8 carácteres</strong>
+            </mat-error>
+            <mat-error *ngIf="addressForm.get('pass').hasError('maxlength')">
+              Contraseña máxima de <strong>32 carácteres</strong>
             </mat-error>
           </mat-form-field>
         </div>
@@ -34,9 +34,13 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
-            <input matInput placeholder="ID Persona" formControlName="idPrsn">
+            <mat-select matInput placeholder="Persona" formControlName="idPrsn">
+              <mat-option value="1">1</mat-option>
+              <mat-option value="2">2</mat-option>
+              <mat-option value="3">3</mat-option>
+            </mat-select>
             <mat-error *ngIf="addressForm.controls['idPrsn'].hasError('required')">
-              ID Persona es <strong>requerido</strong>
+              Persona es <strong>requerido</strong>
             </mat-error>
           </mat-form-field>
         </div>
