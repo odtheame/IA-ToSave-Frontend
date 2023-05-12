@@ -1,0 +1,73 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+    <mat-card class="shipping-card">
+        <mat-card-header>
+            <mat-card-title>Incidencias</mat-card-title>
+        </mat-card-header>
+        <br>
+        <mat-card-content>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Anomalía" formControlName="anmla">
+                        <mat-error *ngIf="addressForm.controls['anmla'].hasError('required')">
+                            Anomalía <strong>requerida</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Ubicacion" formControlName="idUbi">
+                        <mat-error *ngIf="addressForm.controls['idUbi'].hasError('required')">
+                            Ubicacion <strong>Requerida</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput [matDatepicker]="fecha" placeholder="Fecha" formControlName="fecha">
+                        <mat-datepicker-toggle matSuffix [for]="fecha"></mat-datepicker-toggle>
+                        <mat-datepicker #fecha></mat-datepicker>
+                        <mat-error *ngIf="addressForm.controls['fecha'].hasError('required')">
+                            Fecha <strong>requerida</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Hora" formControlName="hora">
+                        <mat-error *ngIf="addressForm.controls['hora'].hasError('required')">
+                            Hora <strong>requerida</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Sujetos" formControlName="sjts">
+                        <mat-error *ngIf="addressForm.controls['sjts'].hasError('required')">
+                            Escriba por lo menos <strong>1 sujeto</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <mat-select placeholder="Aprobación" formControlName="apbc">
+                            <mat-option value="Pendiente">Pendiente</mat-option>
+                            <mat-option value="Aprobado">Aprobado</mat-option>
+                            <mat-option value="Negado">Negado</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="addressForm.controls['apbc'].hasError('required')">
+                            Aprobación <strong>requerida</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" type="submit">Submit</button>
+        </mat-card-actions>
+    </mat-card>
+</form>

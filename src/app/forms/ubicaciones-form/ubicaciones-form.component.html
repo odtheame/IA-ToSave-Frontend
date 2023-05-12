@@ -1,0 +1,63 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Ubicaciones</mat-card-title>
+    </mat-card-header>
+    <br>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Departamento" formControlName="dpto">
+            <mat-error *ngIf="addressForm.controls['dpto'].hasError('required')">
+              Departamento es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Ciudad" formControlName="cdad">
+            <mat-error *ngIf="addressForm.controls['cdad'].hasError('required')">
+              Ciudad es <strong>requerida</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Localidad" formControlName="lcld">
+            <mat-error *ngIf="addressForm.controls['lcld'].hasError('required')">
+              Localidad es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Número de Cuadrante" formControlName="ncdt">
+            <mat-error *ngIf="addressForm.controls['ncdt'].hasError('required')">
+              Número de cuadrante es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-select matInput placeholder="Usuario" formControlName="idUsr">
+              <mat-option value="1">1</mat-option>
+              <mat-option value="2">2</mat-option>
+              <mat-option value="3">3</mat-option>
+            </mat-select>
+            <mat-error *ngIf="addressForm.controls['idUsr'].hasError('required')">
+              Usuario es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

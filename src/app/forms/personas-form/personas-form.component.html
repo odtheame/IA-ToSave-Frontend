@@ -1,0 +1,100 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Personas</mat-card-title>
+    </mat-card-header>
+    <br>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Primer Nombre" formControlName="prNom">
+            <mat-error *ngIf="addressForm.controls['prNom'].hasError('required')">
+              Primer nombre <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Segundo Nombre" formControlName="sdNom">
+            <!--<mat-error *ngIf="addressForm.controls['prNom'].hasError('required')">
+              Primer nombre <strong>requerido</strong>
+            </mat-error>-->
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Primer Apellido" formControlName="prApe">
+            <mat-error *ngIf="addressForm.controls['prApe'].hasError('required')">
+              Primer apellido <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Segundo Apellido" formControlName="sdApe">
+            <mat-error *ngIf="addressForm.controls['sdApe'].hasError('required')">
+              Segundo apellido <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Correo" formControlName="correo">
+            <mat-error *ngIf="addressForm.controls['correo'].hasError('required')">
+              Correo es <strong>requerido</strong>
+            </mat-error>
+            <mat-error *ngIf="addressForm.get('correo').hasError('email')">
+              No tiene correcto el <strong>formato</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input type="number" matInput placeholder="Teléfono" formControlName="telef">
+            <mat-error *ngIf="addressForm.controls['telef'].hasError('required')">
+              Teléfono es <strong>requerido</strong>
+            </mat-error>
+            <mat-error *ngIf="addressForm.get('telef').hasError('min')">
+              Teléfono mínimo de <strong>7 carácteres</strong>
+            </mat-error>
+            <mat-error *ngIf="addressForm.get('telef').hasError('max')">
+              Teléfono máximo de <strong>13 carácteres</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput [matDatepicker]="feNaci" placeholder="Fecha Nacimiento" formControlName="feNaci">
+            <mat-datepicker-toggle matSuffix [for]="feNaci"></mat-datepicker-toggle>
+            <mat-datepicker #feNaci></mat-datepicker>
+            <mat-error *ngIf="addressForm.controls['feNaci'].hasError('required')">
+              Fecha de nacimiento es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput [matDatepicker]="feIngr" placeholder="Fecha Ingreso" formControlName="feIngr">
+            <mat-datepicker-toggle matSuffix [for]="feIngr"></mat-datepicker-toggle>
+            <mat-datepicker #feIngr></mat-datepicker>
+            <mat-error *ngIf="addressForm.controls['feIngr'].hasError('required')">
+              Fecha de ingreso es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
