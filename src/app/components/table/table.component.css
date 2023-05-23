@@ -1,6 +1,47 @@
-.full-width-table {
-  width: 100%;
+.options {
+  display: flex;
+  max-width: 70%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  justify-content: space-between;
 }
+
+@media (max-width: 1240px) {
+
+  .mdc-data-table__table,
+  .options {
+    min-width: 90% !important;
+  }
+}
+
+.mdc-data-table__table {
+  min-width: 70%;
+  margin: 0 auto;
+}
+
+.mat-mdc-form-field-type-mat-input {
+  display: block;
+  min-width: 35%;
+}
+
+.mat-mdc-paginator {
+  display: block;
+  max-width: 45%;
+  background-color: transparent;
+}
+
+.mat-mdc-paginator-container{
+  display: block !important;
+}
+
+.mat-mdc-paginator-outer-container {
+  padding: 0 !important;
+}
+
+.mat-mdc-paginator-range-label{
+  margin: none;
+}
+
 /* Estilo para el botón de filtrar */
 .mat-form-field-suffix {
   background-color: #007bff;
@@ -12,9 +53,6 @@
 }
 
 /* Estilo para la tabla */
-table.mat-table {
-  width: 100%;
-}
 
 th.mat-header-cell,
 td.mat-cell {

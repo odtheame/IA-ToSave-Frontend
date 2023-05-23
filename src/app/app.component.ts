@@ -24,7 +24,6 @@ export class AppComponent implements OnInit {
     }
     this.loginService.login.subscribe(value => {
       this.login = value;
-      console.log(this.login)
     })
   }
 
