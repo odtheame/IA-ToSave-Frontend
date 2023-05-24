@@ -39,6 +39,7 @@ import { IncidenciasFormComponent } from './forms/incidencias-form/incidencias-f
 import { InformesFormComponent } from './forms/informes-form/informes-form.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatDialogModule,
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
