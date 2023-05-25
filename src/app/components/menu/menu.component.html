@@ -4,32 +4,32 @@
 <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isWeb$ | async) ? 'dialog' : 'navigation'"
         [mode]="(isWeb$ | async) ? 'over' : 'side'" [opened]="(isWeb$ | async) === false">
-        <mat-toolbar>Menu</mat-toolbar>
+        <mat-toolbar class="title">Menu</mat-toolbar>
         <mat-nav-list>
             <a mat-list-item href="/Clientes"><span class="material-symbols-outlined">
                     skateboarding
-                </span>Clientes</a>
+                </span>&nbsp;Clientes</a>
             <a mat-list-item href="/Documentos"><span class="material-symbols-outlined">
                     demography
-                </span>Documentos</a>
+                </span>&nbsp;Documentos</a>
             <a mat-list-item href="/Incidencias"><span class="material-symbols-outlined">
                     assignment_late
-                </span>Incidencias</a>
+                </span>&nbsp;Incidencias</a>
             <a mat-list-item href="/Informes"><span class="material-symbols-outlined">
                     import_contacts
-                </span>Informes</a>
+                </span>&nbsp;Informes</a>
             <a mat-list-item href="/Personas"><span class="material-symbols-outlined">
                     face
-                </span>Personas</a>
+                </span>&nbsp;Personas</a>
             <a mat-list-item href="/Usuarios"><span class="material-symbols-outlined">
                     account_circle
-                </span>Usuarios</a>
+                </span>&nbsp;Usuarios</a>
             <a mat-list-item href="/Ubicaciones"><span class="material-symbols-outlined">
                     location_on
-                </span>Ubicaciones</a>
+                </span>&nbsp;Ubicaciones</a>
             <a mat-list-item href="" (click)="cerrar()"><span class="material-symbols-outlined">
                 account_circle_off
-            </span>Cerrar Sesión</a>
+            </span>&nbsp;Cerrar Sesión</a>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>

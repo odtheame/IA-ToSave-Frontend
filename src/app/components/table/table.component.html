@@ -1,7 +1,7 @@
 <div class="options">
-  <mat-form-field>
+  <mat-form-field class="filtrar">
     <mat-label>Buscar</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ej. Nombre" #input>
   </mat-form-field>
 
   <mat-paginator #paginator [length]="dataSource?.data?.length" [pageIndex]="0" [pageSize]="10"
@@ -10,7 +10,6 @@
   <div *ngIf="!(isWeb$ | async); then llamarFuncion"></div>
   <ng-template #llamarFuncion>
     {{ mode() }}
-    <p>polliro</p>
   </ng-template>
 </div>
 
@@ -24,14 +23,14 @@
         {{ element[col] }}
       </ng-container>
       <ng-container *ngIf="last">
-        <button mat-button (click)="editarForm(element)">
-          <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48">
+        <button mat-button class="btnAccion" (click)="editarForm(element, dataSource)">
+          <svg class="svg-update" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20">
             <path
               d="M483-120q-75 0-141-28.5T226.5-226q-49.5-49-78-115T120-482q0-75 28.5-140t78-113.5Q276-784 342-812t141-28q80 0 151.5 35T758-709v-106h60v208H609v-60h105q-44-51-103.5-82T483-780q-125 0-214 85.5T180-485q0 127 88 216t215 89q125 0 211-88t86-213h60q0 150-104 255.5T483-120Zm122-197L451-469v-214h60v189l137 134-43 43Z" />
           </svg>
         </button>
-        <button mat-button (click)="borrar()">
-          <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48">
+        <button mat-button class="btnAccion" (click)="borrar()">
+          <svg class="svg-delete" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 96 960 960" width="20">
             <path
               d="M261 936q-24.75 0-42.375-17.625T201 876V306h-41v-60h188v-30h264v30h188v60h-41v570q0 24-18 42t-42 18H261Zm438-630H261v570h438V306ZM367 790h60V391h-60v399Zm166 0h60V391h-60v399ZM261 306v570-570Z" />
           </svg>

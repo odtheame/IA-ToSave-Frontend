@@ -10,6 +10,8 @@ import { map, shareReplay } from 'rxjs/operators';
 import { ModalService } from 'src/app/services/modal.service';
 import { Router } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
+import Swal from 'sweetalert2';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-table',
@@ -23,6 +25,7 @@ export class TableComponent extends MatPaginatorIntl implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(public tableService: TableService,
+    public api: ApiService,
     public modalService: ModalService,
     private breakpointObserver: BreakpointObserver,
     private router: Router,
@@ -53,11 +56,11 @@ export class TableComponent extends MatPaginatorIntl implements OnInit {
     this.tableService.responseTable.subscribe(responseTable => {
       this.tableData = responseTable;
       this.displayedColumns = Object.keys(this.tableData[0]);
+      this.displayedColumns.push("Acciones");
       this.dataSource = new MatTableDataSource(this.tableData);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });
-
     this.subscription = this.changes.subscribe(() => {
       //console.log('Las etiquetas del paginator han cambiado');
     });
@@ -76,17 +79,40 @@ export class TableComponent extends MatPaginatorIntl implements OnInit {
 
   private componentRef: ComponentRef<any>;
 
-  editarForm(valores: any) {
-    const componente = this.router.url.slice(1);
+  editarForm(valores: any, dataSource: any) {
     var form = this.tableService.getForm().toPromise();
-
     form.then((component) => {
       this.form = component;
       this.tableService.setValues(valores);
+      this.tableService.setResponse(this.tableData);
       this.modalService.openDialog(this.form);
     });
   }
 
   borrar() {
+    Swal.fire({
+      title: '¿Seguro?',
+      text: "Vas a eliminar este registro.",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Aceptar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+
+        Swal.fire(
+          '¡Eliminado!',
+          'Registro eliminado con éxito.',
+          'success'
+        )
+      }
+    })
   }
+
+  centrarSVG() {
+
+  }
+
 }

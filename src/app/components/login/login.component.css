@@ -1,9 +1,73 @@
-.mat-typography{
-    display: grid;
-    place-items: center;
-    background-image: url(../../../img/fondo.jpg);
-}
-mat-card-header, mat-card-content, mat-card-actions{
+.contenido {
+    position: absolute;
     margin: 0 auto;
-    margin-bottom: 3rem;
+    min-height: 100%;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.fondo {
+    min-height: 105%;
+    min-width: 105%;
+    position: absolute;
+    z-index: 0;
+    background-image: url(../../../img/fondo.jpg) !important;
+    background-position: center;
+    background-size: cover;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+.nextForm{
+    height: 400px;
+    width: 400px;
+    z-index: 1;
+    background-image: url(../../../img/fondo.jpg) !important;
+    background-position: center;
+    background-size: cover;
+    border-radius: 0 0 0 2rem;
+}
+
+form {
+    width: 400px;
+    height: 400px;
+}
+
+.mat-mdc-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgb(217, 161, 186);
+    background: radial-gradient(circle, rgb(244, 165, 200) 0%, rgb(74, 119, 170) 100%);
+    border-radius: 0 2rem 0 0;
+    box-shadow: none;
+    border: none;
+    height: 100%;
+    width: 100%;
+}
+
+mat-card-header,
+mat-card-content,
+mat-card-actions {
+    margin: 1rem auto;
+    padding: 0;
+}
+.col{
+    width: 300px;
+}
+mat-form-field{
+    width: 100%;
+}
+mat-card-actions{
+    margin: 0 auto;
+}
+.mat-mdc-card-title{
+    font-size: 2rem;
+}
+
+body {
+    min-height: 100%;
 }

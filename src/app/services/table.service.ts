@@ -13,9 +13,18 @@ export class TableService {
   responseTable: Observable<any> = this.responseTableSubject.asObservable();
   form: Observable<any> = this.formSubject.asObservable();
   values: any[];
+  response: any[];
   
   setResponseTable(responseTable: any) {
     this.responseTableSubject.next(responseTable);
+  }
+
+  getResponse(): any{
+    return this.response;
+  }
+
+  setResponse(response: any) {
+    this.response = response;
   }
 
   setForm(form: any) {

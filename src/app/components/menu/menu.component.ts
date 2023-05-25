@@ -17,9 +17,21 @@ export class MenuComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver, public loginService: LoginService) {}
+  constructor(private breakpointObserver: BreakpointObserver, public loginService: LoginService) { }
 
-  cerrar(){
+  ngOnInit() {
+    const spanElement = document.querySelectorAll('.mat-mdc-list-item-unscoped-content');
+    spanElement.forEach((spanElement) => {
+      const elemento = spanElement as HTMLElement;
+      elemento.style.display = 'flex';
+      elemento.style.justifyContent = 'start';
+      elemento.style.alignItems = 'center';
+      elemento.style.color = 'antiquewhite';
+    });
+  }
+ 
+
+  cerrar() {
     localStorage.setItem('login', 'logout')
     this.loginService.login.next("login");
   }

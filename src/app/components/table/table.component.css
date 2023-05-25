@@ -12,11 +12,25 @@
   .options {
     min-width: 90% !important;
   }
+
+  .mdc-data-table__row::after {
+    content: "";
+    position: absolute;
+    left: 6%;
+width: 70%;
+    border-bottom: 1px solid rgb(228, 228, 228);
+    /* Color y estilo del borde */
+  }
 }
 
 .mdc-data-table__table {
   min-width: 70%;
   margin: 0 auto;
+}
+
+.mat-mdc-table {
+  background-color: rgb(240, 240, 240) !important;
+  color: rgb(50, 50, 50);
 }
 
 .mat-mdc-form-field-type-mat-input {
@@ -28,28 +42,6 @@
   display: block;
   max-width: 45%;
   background-color: transparent;
-}
-
-.mat-mdc-paginator-container{
-  display: block !important;
-}
-
-.mat-mdc-paginator-outer-container {
-  padding: 0 !important;
-}
-
-.mat-mdc-paginator-range-label{
-  margin: none;
-}
-
-/* Estilo para el botón de filtrar */
-.mat-form-field-suffix {
-  background-color: #007bff;
-  color: #fff;
-}
-
-.mat-form-field-suffix:hover {
-  background-color: #0069d9;
 }
 
 /* Estilo para la tabla */
@@ -77,4 +69,55 @@ tr.mat-row:nth-child(even) {
 
 tr.mat-row:hover {
   background-color: #f0f0f0;
+}
+
+.mdc-data-table__header-cell,
+.mdc-data-table__cell {
+  text-align: center;
+  position: relative;
+  border: none;
+  color: rgb(54, 54, 54);
+}
+
+.mdc-data-table__header-cell::after,
+.mdc-data-table__cell::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 0;
+  height: 60%;
+  border-right: 1px solid rgb(228, 228, 228);
+  /* Color y estilo del borde */
+}
+
+.mdc-data-table__row::after {
+  content: "";
+  position: absolute;
+  left: 6%;
+  width: 88%;
+  border-bottom: 1px solid rgb(228, 228, 228);
+  /* Color y estilo del borde */
+}
+
+.mdc-button {
+  min-width: 50px;
+}
+
+.btnAccion .mat-mdc-button .mdc-button__label {
+  position: relative;
+
+  display: flex !important;
+}
+
+.mat-mdc-button {
+  padding: 0;
+  max-width: 40px;
+}
+
+.svg-update {
+  fill: rgb(55, 125, 174);
+}
+
+.svg-delete {
+  fill: rgb(174, 55, 55);
 }
